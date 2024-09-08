@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { FruitsComponent } from './fruits/fruits.component';
-import { HeaderComponent } from './header/header.component';
-import { VegitablesComponent } from './vegitables/vegitables.component';
-import { AppComponent } from './app.component';
-import { ItemComponent } from './item/item.component';
+import { FruitsComponent } from './components/fruits/fruits.component';
+import { HeaderComponent } from './components/header/header.component';
+import { VegitablesComponent } from './components/vegitables/vegitables.component';
+import { NavbarService } from './services/navbar.service';
+import { CartComponent } from './components/cart/cart.component';
 
 
 
@@ -15,8 +15,12 @@ import { ItemComponent } from './item/item.component';
     RouterOutlet,
     HeaderComponent,
     FruitsComponent, 
-    VegitablesComponent
+    VegitablesComponent,
+    CartComponent
   ],
   declarations: [],
+  providers: [
+    NavbarService  
+]
 })
 export class AppModule { }

@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { AppModule } from './app.module';
-import { HeaderComponent } from "./header/header.component";
+import { HeaderComponent } from "./components/header/header.component";
 import { RouterModule } from '@angular/router';
-import { Item, ItemsService } from './items.service';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { DataService } from './services/data.service';
+import { LocalStorageService } from './services/local-storage.service';
+import { Item } from './models/item';
 
 @Component({
   selector: 'app-root',
@@ -18,14 +20,18 @@ export class AppComponent {
   subscription!: Subscription;
   items!: Item[];
 
-  constructor(private itemService: ItemsService) {
+  constructor(private dataService: DataService, private storageService: LocalStorageService) {
   }
 
   // subscribe to data service and set inital data in local storage
   ngOnInit(): void {
-    this.itemService.getData().subscribe(results=>{
+    this.dataService.getData().subscribe(results=>{
       this.items = results;
-     this.itemService.setLocalStorage(this.items);
+      this.items.forEach((a:any) => {
+        Object.assign(a,{quantity:0,total:a.price});
+      });
+      console.log(this.items);
+     this.storageService.setLocalStorage(this.items);
      });  
   }
  
