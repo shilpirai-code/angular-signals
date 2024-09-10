@@ -12,7 +12,7 @@
       "name": "Apple",
       "type": "fruit",
       "image": "/assets/images/fruits/apple.png",
-      "price": 5,
+      "price": 4,
       "quantity": 0
     },
     {
@@ -20,7 +20,7 @@
       "name": "Banana",
       "type": "fruit",
       "image": "/assets/images/fruits/banana.png",
-      "price": 2,
+      "price": 3,
       "quantity": 0
     },
     {
@@ -28,7 +28,7 @@
       "name": "Potato",
       "type": "vegetable",
       "image": "/assets/images/vegetables/potato.png",
-      "price": 3,
+      "price": 2,
       "quantity": 0
     },
     {
@@ -36,7 +36,39 @@
       "name": "Tomato",
       "type": "vegetable",
       "image": "/assets/images/vegetables/tomato.png",
-      "price": 4,
+      "price": 2,
+      "quantity": 0
+    },
+    {
+      "id":"106",
+      "name": "Onion",
+      "type": "vegetable",
+      "image": "/assets/images/vegetables/onion.png",
+      "price": 2,
+      "quantity": 0
+    },
+    {
+      "id":"107",
+      "name": "Milk",
+      "type": "dairy",
+      "image": "/assets/images/dairy/milk.png",
+      "price": 1.45,
+      "quantity": 0
+    },
+    {
+      "id":"108",
+      "name": "Cheese",
+      "type": "dairy",
+      "image": "/assets/images/dairy/cheese.png",
+      "price": 5,
+      "quantity": 0
+    },
+    {
+      "id":"104",
+      "name": "Bell",
+      "type": "vegetable",
+      "image": "/assets/images/vegetables/bell.png",
+      "price": 2,
       "quantity": 0
     }
   ]
