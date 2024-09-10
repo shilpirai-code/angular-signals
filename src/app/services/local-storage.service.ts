@@ -24,4 +24,8 @@ export class LocalStorageService {
    return carts;
   }  
   
+  // Clear items from local storage
+  clearLocalStorage(){
+    localStorage.removeItem('localCarts');
+  }
 }
