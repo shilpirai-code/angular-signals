@@ -3,7 +3,8 @@
         <div class="col-md-11">Grocery.</div>
         <div class="col-md-1 cart" [routerLink]="['/cart']">
             <i class="fa fa-shopping-cart"></i>
-            <span class="count"> {{cartCount}} </span>
+            <span class="count"> {{cartService.totalItem()}} </span>
+              
         </div>
     </section> 
     <app-navbar></app-navbar>

@@ -19,18 +19,16 @@ export class CartComponent {
   public products : any = [];
   public grandTotal !: number;
 
-  constructor(private navbar: NavbarService, private _location: Location, private cartService: CartService, private storageService:LocalStorageService){}
+  constructor(private navbar: NavbarService, private _location: Location, public cartService: CartService, private storageService:LocalStorageService){}
 
   ngOnInit(): void {
     this.navbar.hide();
-    this.cartService.getProducts()
-    .subscribe(res=>{
-      this.products = res;
-      this.grandTotal = this.cartService.getTotalPrice();
-      this.formatCart();
-    })
   }
 
+  remove(i: number){
+    this.cartService.removeFromCartSignal(i);
+  }
+  
   removeItem(item: any){
     this.cartService.removeFromCart(item);
   }
