@@ -4,11 +4,13 @@ import { CommonModule, Location } from '@angular/common';
 import { CartService } from '../../services/cart.service';
 import { Item } from '../../models/item';
 import { ItemComponent } from '../item/item.component';
+import { LocalStorageService } from '../../services/local-storage.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [ItemComponent, CommonModule],
+  imports: [ItemComponent, CommonModule, RouterModule],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss'
 })
@@ -17,7 +19,7 @@ export class CartComponent {
   public products : any = [];
   public grandTotal !: number;
 
-  constructor(private navbar: NavbarService, private _location: Location, private cartService: CartService){}
+  constructor(private navbar: NavbarService, private _location: Location, private cartService: CartService, private storageService:LocalStorageService){}
 
   ngOnInit(): void {
     this.navbar.hide();
@@ -35,6 +37,7 @@ export class CartComponent {
 
   emptycart(){
     this.cartService.removeAllCart();
+    this.storageService.clearLocalStorage();
   }
 
   backClick(): void {
